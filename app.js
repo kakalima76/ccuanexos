@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -17,10 +18,22 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+app.use(methodOverride('X-HTTP-Method'));
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('X-Method-Override'));
+app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(req, res, next){
+    if (req.url === '/favicon.ico'){
+        res.writeHead(200, {'Content-Type': 'image/x-icon'});
+        res.send('');
+    }else{
+        next();
+    }
+});
 
 app.use('/', routes);
 app.use('/users', users);

@@ -1,15 +1,15 @@
 var cnn = function(){
-        /*var username = "kakalima76",
+        var username = "kakalima76",
         password = "Ni244265",
         server = "ds047315.mongolab.com",
         port = "47315",
-        database = "ccuusers";*/
+        database = "ccuusers";
     
-    var username = "",
+    /*var username = "",
         password = "",
         server = "localhost",
         port = "27017",
-        database = "ccuusers";
+        database = "ccuusers";*/
     
         return {
         "username": username,
