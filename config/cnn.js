@@ -1,13 +1,13 @@
 var cnn = function(){
-        var username = "kakalima76",
-        password = "Ni244265",
-        server = "ds047315.mongolab.com",
-        port = "47315",
+        var username = "",
+        password = "",
+        server = "191.232.39.223",
+        port = "27017",
         database = "ccuusers";
     
     /*var username = "",
         password = "",
-        server = "localhost",
+        server = "localhost",//"controleurbano.cloudapp.net",
         port = "27017",
         database = "ccuusers";*/
     

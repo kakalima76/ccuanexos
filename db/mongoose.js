@@ -16,11 +16,11 @@ function _connection(){
 mongoose.connect(_connection());
 var db = mongoose.connection;
 db.on('error', function(err){
-    debug(err);
+    console.error(err);
 });
 
 db.once('open', function(cb){
-    debug('connected to mongodb');
+    console.log('connected to mongodb');
 })
 
 module.exports = mongoose;
