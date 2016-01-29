@@ -1,7 +1,14 @@
 doctype html
-html
+html(lang="pt-br" ng-app="app")
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    script(src='/javascripts/angular.min.js')
+    script(src='/javascripts/angular-resource.min.js')
+    script(src='/javascripts/app.js')
+    
+    
+  body(ng-controller="testController")
     block content
+
+    
