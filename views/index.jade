@@ -1,8 +1,24 @@
 extends layout
 
 block content
-  h1= title
-  p Pagina em construção
-  div
-   {{teste}}
+ header
+ section
+     input(
+     type='text'
+     class='input-name'
+     placeholder="usuario"
+     )
+     input(
+     type='password'
+     class='input-password'
+     placeholder="senha"
+     )
+     input(
+     type='submit'
+     class='input-submit'
+     value="Entrar"
+     )
+
+   
+
 

@@ -1,28 +1,35 @@
-var app = angular.module('app', ['ngResource']).
+var app = angular.module('app', []);
 
-factory('userService', ['$resource', function($resource){
+/*factory('userService', ['$resource', function($resource){
 		return  $resource('/usuarios/:id', {id : '@id'}, 
 		{ 
 		  'get':    {method:'GET'},
 		  'save':   {method:'POST'},
-		  'query':  {method:'GET', isArray:true},
+		  'query':  {method:'GET', isArray:false},
 		  'remove': {method:'DELETE'},
 		  'delete': {method:'DELETE'}
 		});
 	}
 
-  ]).
+  ]).*/
 
-controller('testController', ['$scope', 'userService', function testController($scope, userService){
-	var User = userService;
-	User.get()
-	.$promisse.then(function(user){
-		$scope.user = user;
-	})
+app.controller('testController', ['$scope', '$http', function($scope, $http){
+	$scope.teste = [];
+		$http({
+			method: 'GET',
+			url: '/usuarios',
+			headers: {token: 'asdsdfdfrere'}
+		}).then(function sucess(res){
+			$scope.teste.push(res.data);
+		}), function error(response){
+			alert('falhou geral');
+		}
+
+	}
 
 
-	$scope.teste = 'Nieraldo Lima';
-	console.log('Tudo ok!!!');
-}]);
+]);
 
-//https://dry-chamber-82900.herokuapp.com/
+	
+
+///https://dry-chamber-82900.herokuapp.com/
