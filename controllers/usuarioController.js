@@ -33,13 +33,22 @@ function usuarioController(usuarioModel){
         
     }//fim da função login
       
+    this.getLast = function(req, res, next){
+       this.model.findLastAsync()
+       .then(function(data){
+            res.json(data);
+       })
+       .catch(next);
+    };//fim do getlast
+
+
     this.getAll = function(req, res, next){
         this.model.findAsync({})
         .then(function(data){
             res.json(data);
         })
         .catch(next);
-    };
+    };//fim do getAll
     
     this.getById = function(req, res, next){
         var _id = req.params._id;
@@ -48,7 +57,7 @@ function usuarioController(usuarioModel){
         .then(function(data){
             res.json(data);
         });
-    };
+    };//fim do getById
     
     this.create = function(req, res, next){
     
@@ -68,7 +77,7 @@ function usuarioController(usuarioModel){
             res.json(data);
         })
         .catch(next);
-    };
+    };//fim do create
     
     this.update = function(req, res, next){
         var _id = req.params._id;
@@ -78,7 +87,7 @@ function usuarioController(usuarioModel){
             res.json(data);
         })
         .catch(next);
-    };
+    };//fim do update
     
     this.remove = function(req, res, next){
         var _id = req.params._id;
@@ -87,7 +96,7 @@ function usuarioController(usuarioModel){
             res.json(data);
         })
         .catch(next);
-    };
+    };//fim do remove
                
 }
 
