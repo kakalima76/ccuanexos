@@ -17,21 +17,6 @@ var handleFound = function(data){
 function usuarioController(usuarioModel){
     this.model = Promisse.promisifyAll(usuarioModel);
     
-    this.login = function(req, res, next){
-            var nome = req.body.nome;
-            var senha = req.body.senha;
-        this.model.findUser(nome, function(err, data){
-            if(data[0].validarSenha(senha)){
-                var expires = moment().add(7, 'days').valueOf();
-                var token = jwt.encode({user: data[0].nome, exp: expires}, 'segredo');
-                res.json({token : token});
-              
-            }//fim do if
-            
-        })//fim do metodo findUser
-        
-        
-    }//fim da função login
       
     this.getLast = function(req, res, next){
        this.model.findLastAsync()
@@ -62,14 +47,18 @@ function usuarioController(usuarioModel){
     this.create = function(req, res, next){
     
         var nome = req.body.nome;
-        var senha = this.model.gerarSenha(req.body.senha);
-        var acesso = req.body.acesso;
+        var matricula = req.body.matricula;
+        var senha = req.body.senha;
+        var ordem = req.body.ordem;
+        var data = req.body.data;
         
         var body = 
             {
                 nome : nome,
+                matricula: matricula,
                 senha : senha,
-                acesso : acesso                
+                ordem : ordem,
+                data: data                
             }
         
         this.model.createAsync(body)
@@ -80,11 +69,13 @@ function usuarioController(usuarioModel){
     };//fim do create
     
     this.update = function(req, res, next){
-        var _id = req.params._id;
-        var body = req.body;
-        this.model.updateAsync(_id, body)
+        var nome = req.params.nome;
+        var ordem = req.params.ordem;
+        var data = req.params.data;
+        this.model.updateAsync(nome, {$set: {ordem: ordem, data: data}}, {multi: true})
         .then(function(err, data){
             res.json(data);
+            console.log('teste');
         })
         .catch(next);
     };//fim do update

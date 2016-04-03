@@ -32,13 +32,9 @@ var middlewareAuth = function(request, response, next){
 };
 
 
-router.get('/last', usuarioController.getLast.bind(usuarioController));
 router.get('/', usuarioController.getAll.bind(usuarioController));
-router.get('/:_id', usuarioController.getById.bind(usuarioController));
 router.post('/', usuarioController.create.bind(usuarioController));
-router.post('/login', usuarioController.login.bind(usuarioController));
-router.put('/:_id', usuarioController.update.bind(usuarioController));
-router.delete('/:_id', usuarioController.remove.bind(usuarioController));
+router.put('/inserir/:nome/:ordem/:data', usuarioController.update.bind(usuarioController));
 
 
 module.exports = router;

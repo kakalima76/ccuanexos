@@ -1,8 +1,10 @@
 var usuario = 
     {
         nome : String,
+        matricula: String,
         senha : String,
-        acesso: String
+        ordem: String,
+        data: String
     }
 
 module.exports = usuario;

@@ -6,6 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'F/CCU/GOP' });
 });
 
-router.use('/usuarios', require('./usuarioRouter'));
+router.use('/agentes', require('./usuarioRouter'));
 
 module.exports = router;
