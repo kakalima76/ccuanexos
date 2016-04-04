@@ -14,23 +14,13 @@ function modelDAO(model){
         model.save(function(err, result){
            cb(err, result); 
         });
-    }//fim do método create
-    
-    this.update = function(nome, data, options, cb){
-        var query = {nome : nome};
-        this.model.update(query, data, options).exec(function(err, result){
-           cb(err, result); 
-        });
-    };//fim do metodo update
-    
+    }//fim do método create    
       
 }
-
 
 module.exports = function(mongoose, obj){
     var Schema = mongoose.Schema;
     var objSchema = new Schema(obj);
-    var Modelo = mongoose.model('Modelo', objSchema);
+    var Modelo = mongoose.model('Vistoria', objSchema);
     return new modelDAO(Modelo);
 };
-

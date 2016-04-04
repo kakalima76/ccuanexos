@@ -7,5 +7,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.use('/agentes', require('./usuarioRouter'));
+router.use('/vistorias', require('./autorizadoRouter'));
 
 module.exports = router;
