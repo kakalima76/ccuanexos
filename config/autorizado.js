@@ -11,7 +11,11 @@ var autorizado =
       local: String,
       situacao: String,
       conformidade: Boolean,
-      multas: String
+      multas: String,
+      latitude: String,
+      longitude: String,
+      horaAutuacao: String
+
     }
 
     module.exports = autorizado;
