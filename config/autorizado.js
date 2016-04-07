@@ -12,8 +12,8 @@ var autorizado =
       situacao: String,
       conformidade: Boolean,
       multas: String,
-      latitude: String,
-      longitude: String,
+      latitude: Number,
+      longitude: Number,
       horaAutuacao: String
 
     }
