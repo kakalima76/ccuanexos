@@ -14,7 +14,8 @@ var autorizado =
       multas: String,
       latitude: Number,
       longitude: Number,
-      horaAutuacao: String
+      horaAutuacao: String,
+      pontos: Number
 
     }
 
