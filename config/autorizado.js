@@ -10,7 +10,7 @@ var autorizado =
       cpf: String,
       local: String,
       situacao: String,
-      conformidade: Boolean,
+      conformidade: String,
       multas: String,
       latitude: Number,
       longitude: Number,
