@@ -8,5 +8,6 @@ router.get('/', function(req, res, next) {
 
 router.use('/agentes', require('./usuarioRouter'));
 router.use('/vistorias', require('./autorizadoRouter'));
+router.use('/vistorias', require('./fotoRouter'));
 
 module.exports = router;
