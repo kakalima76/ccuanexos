@@ -7,7 +7,7 @@ var cnn = function(){
     
     /*var username = "",
         password = "",
-        server = "localhost",//"controleurbano.cloudapp.net",
+        server = "localhost",
         port = "27017",
         database = "ccuusers";*/
     

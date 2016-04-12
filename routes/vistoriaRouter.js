@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var obj = require('../config/foto');
+var obj = require('../config/vistoria');
 var mongoose = require('../db/mongoose');
-var usuarioModel = require('../models/fotoModel')(mongoose, obj);
-var usuarioController = require('../controllers/fotoController')(usuarioModel);
+var usuarioModel = require('../models/vistoriaModel')(mongoose, obj);
+var usuarioController = require('../controllers/vistoriaController')(usuarioModel);
 var jwt = require('jwt-simple');
 var moment = require('moment');
 
@@ -34,5 +34,7 @@ var middlewareAuth = function(request, response, next){
 
 router.get('/', usuarioController.getAll.bind(usuarioController));
 router.post('/', usuarioController.create.bind(usuarioController));
+
+
 
 module.exports = router;

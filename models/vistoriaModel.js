@@ -6,8 +6,9 @@ function modelDAO(model){
     
     this.find = function(query, cb){
     this.model.find(query).exec(cb);
-    };//fim do metodo find
-      
+    };//fim do metodo findAll
+    
+
         
     this.create = function(data, cb){
         var model = new this.model(data);
@@ -21,6 +22,6 @@ function modelDAO(model){
 module.exports = function(mongoose, obj){
     var Schema = mongoose.Schema;
     var objSchema = new Schema(obj);
-    var Modelo = mongoose.model('Autorizado', objSchema);
+    var Modelo = mongoose.model('Vistoria', objSchema);
     return new modelDAO(Modelo);
 };
