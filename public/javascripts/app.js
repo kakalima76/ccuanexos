@@ -17,7 +17,7 @@ app.controller('testController', ['$scope', '$http', function($scope, $http){
 	$scope.imagemURL = [];
 		
 
-		var promisse = $http.get('https://ccuanexos.herokuapp.com/foto');
+		var promisse = $http.get('/foto');
 
 		promisse.then(function(data){
 
