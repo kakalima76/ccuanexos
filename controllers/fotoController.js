@@ -20,9 +20,24 @@ function usuarioController(usuarioModel){
 
     this.getAll = function(req, res, next){
 
-        this.model.findAllAsync({})
+        this.model.findAsync({})
         .then(function(data){
-            res.json(data)
+           var response = [];
+           data.forEach(function(foto){
+                response.push(
+                   {
+                    agente: foto.agente,
+                    ordem: foto.ordem,
+                    data: foto.data,
+                    documento: foto.documento,
+                    foto: foto.foto.toString()
+                   } 
+
+                )
+           })
+
+           res.json(response || '');
+
         })
         .catch(next);
     };//fim do getAll

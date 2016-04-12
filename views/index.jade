@@ -1,22 +1,14 @@
 extends layout
 
 block content
- header
+ img(src='{{imagemURL}}')
  section
-     input(
-     type='text'
-     class='input-name'
-     placeholder="usuario"
-     )
-     input(
-     type='password'
-     class='input-password'
-     placeholder="senha"
-     )
+     
      input(
      type='submit'
      class='input-submit'
      value="Entrar"
+     ng-click='add()'
      )
 
    

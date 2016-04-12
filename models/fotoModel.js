@@ -4,8 +4,8 @@ function modelDAO(model){
     
     this.model = model;
     
-    this.findAll = function(cb){
-    this.model.find({}).exec(cb);
+    this.find = function(query, cb){
+    this.model.find(query).exec(cb);
     };//fim do metodo findAll
     
 
