@@ -28,10 +28,10 @@ app.controller('testController', ['$scope', '$http', function($scope, $http){
 			foto: palavra
 		}
 
-		var promisse = $http.get('/foto');
+		var promisse = $http.post('/foto', body);
 
 		promisse.then(function(data){
-			$scope.imagemURL = 'data:image/jpeg;base64,' + data.data[0].foto.toString();
+			//$scope.imagemURL = 'data:image/jpeg;base64,' + data.data[0].foto.toString();
 			console.log(data);
 		})
 	}
