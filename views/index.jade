@@ -1,15 +1,10 @@
 extends layout
 
 block content
- img(src='{{imagemURL}}')
- section
-     
-     input(
-     type='submit'
-     class='input-submit'
-     value="Entrar"
-     ng-click='add()'
-     )
+ div(ng-repeat='value in imagemURL')
+  p Agente: {{value.agente}} OS: {{value.ordem}} Data: {{value.data}} Nr Doc: {{value.documento}}
+  img(src='{{value.foto}}')
+ 
 
    
 

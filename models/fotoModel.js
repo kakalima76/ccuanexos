@@ -9,10 +9,6 @@ function modelDAO(model){
     };//fim do metodo findAll
     
 
-    this.findFoto = function(query, cb){
-    this.model.find(query).exec(cb);
-    };//fim do metodo findFoto
-      
         
     this.create = function(data, cb){
         var model = new this.model(data);

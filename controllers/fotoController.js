@@ -41,30 +41,6 @@ function usuarioController(usuarioModel){
         })
         .catch(next);
     };//fim do getAll
-    
-
-    this.getFoto = function(req, res, next){
-
-    var agente = req.body.agente;
-    var ordem  = req.body.ordem;
-    var data   = req.body.data;
-    var documento = req.body.documento;
-
-        var query =
-        {
-            agente: agente,
-            ordem: ordem,
-            data: data,
-            documento: documento
-        }
-
-        this.model.findFotoAsync(query)
-        .then(function(data){
-            res.json(data[0].foto);
-        })
-        .catch(next);
-    };//fim do getAll
-    
 
     
     this.create = function(req, res, next){
