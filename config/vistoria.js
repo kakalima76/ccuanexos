@@ -1,5 +1,6 @@
 var vistoria = 
 {
+	ordem: String,
 	agente: String,
 	matricula: String,
 	numero: String,
