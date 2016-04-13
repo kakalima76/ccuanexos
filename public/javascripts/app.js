@@ -28,6 +28,8 @@ app.controller('testController', ['$scope', '$http', function($scope, $http){
 						ordem: value.ordem,
 						data: value.data,
 						documento: value.documento,
+						servico: value.servico,
+						acao: value.acao,
 						foto: 'data:image/jpeg;base64,' + value.foto.toString()
 					}
 

@@ -30,6 +30,8 @@ function usuarioController(usuarioModel){
                     ordem: foto.ordem,
                     data: foto.data,
                     documento: foto.documento,
+                    servico: foto.servico,
+                    acao: foto.acao,
                     foto: foto.foto.toString()
                    } 
 
