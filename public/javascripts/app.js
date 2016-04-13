@@ -17,7 +17,7 @@ app.controller('testController', ['$scope', '$http', function($scope, $http){
 	$scope.imagemURL = [];
 		
 
-		var promisse = $http.get('/foto');
+		var promisse = $http.get('/imagem');
 
 		promisse.then(function(data){
 
@@ -36,6 +36,6 @@ app.controller('testController', ['$scope', '$http', function($scope, $http){
 			});
 
 
-		
+
 
 }]);
