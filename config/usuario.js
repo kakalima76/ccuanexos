@@ -4,7 +4,8 @@ var usuario =
         matricula: String,
         senha : String,
         ordem: String,
-        data: String
+        data: String,
+        chefe: Boolean
     }
 
 module.exports = usuario;

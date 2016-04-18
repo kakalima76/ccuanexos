@@ -51,6 +51,7 @@ function usuarioController(usuarioModel){
         var senha = req.body.senha;
         var ordem = req.body.ordem;
         var data = req.body.data;
+        var chefe = req.body.chefe;
         
         var body = 
             {
@@ -58,7 +59,8 @@ function usuarioController(usuarioModel){
                 matricula: matricula,
                 senha : senha,
                 ordem : ordem,
-                data: data                
+                data: data,
+                chefe: chefe               
             }
         
         this.model.createAsync(body)
