@@ -20,7 +20,7 @@ function usuarioController(usuarioModel){
     this.countAll = function(req, res, next){
         this.model.countAsync({})
         .then(function(data){
-            console.log(data);
+            res.json(data);
         })
         .catch(next);
     }//fim do método countAll
