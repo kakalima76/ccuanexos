@@ -16,6 +16,15 @@ var handleFound = function(data){
 
 function usuarioController(usuarioModel){
     this.model = Promisse.promisifyAll(usuarioModel);
+
+    this.countAll = function(req, res, next){
+        this.model.countAsync({})
+        .then(function(data){
+            console.log(data);
+        })
+        .catch(next);
+    }//fim do método countAll
+
            
     this.getAll = function(req, res, next){
         this.model.findAsync({})

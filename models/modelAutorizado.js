@@ -5,8 +5,12 @@ function modelDAO(model){
     this.model = model;
     
     this.find = function(query, cb){
-    this.model.find(query).exec(cb);
+        this.model.find(query).exec(cb);
     };//fim do metodo find
+
+    this.count = function(query, cb){
+        this.model.find(query).count().exec(cb);
+    }
       
         
     this.create = function(data, cb){
