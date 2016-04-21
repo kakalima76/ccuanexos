@@ -25,6 +25,14 @@ function usuarioController(usuarioModel){
         .catch(next);
     }//fim do método countAll
 
+    this.getOne = function(req, res, next){
+        this.model.findOneAsync({})
+        .then(function(data){
+            res.json(data);
+        })
+        .catch(next);
+    }//fim do  findOne
+
            
     this.getAll = function(req, res, next){
         this.model.findAsync({})

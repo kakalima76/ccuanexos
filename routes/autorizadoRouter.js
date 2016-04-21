@@ -34,6 +34,7 @@ var middlewareAuth = function(request, response, next){
 
 router.get('/', usuarioController.getAll.bind(usuarioController));
 router.get('/totais', usuarioController.countAll.bind(usuarioController));
+router.get('/ultima', usuarioController.getOne.bind(usuarioController));
 router.post('/', usuarioController.create.bind(usuarioController));
 
 

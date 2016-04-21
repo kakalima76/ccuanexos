@@ -8,6 +8,10 @@ function modelDAO(model){
         this.model.find(query).exec(cb);
     };//fim do metodo find
 
+    this.findOne = function(query, cb){
+        this.model.find(query).sort({'_id' : -1}).limit(1).exec(cb);
+    }
+
     this.count = function(query, cb){
         this.model.find(query).count().exec(cb);
     }
