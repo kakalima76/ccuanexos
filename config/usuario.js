@@ -5,7 +5,8 @@ var usuario =
         senha : String,
         ordem: String,
         data: String,
-        chefe: Boolean
+        chefe: Boolean,
+        status: String
     }
 
 module.exports = usuario;

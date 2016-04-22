@@ -52,6 +52,7 @@ function usuarioController(usuarioModel){
         var ordem = req.body.ordem;
         var data = req.body.data;
         var chefe = req.body.chefe;
+        var status = req.body.status
         
         var body = 
             {
@@ -60,7 +61,8 @@ function usuarioController(usuarioModel){
                 senha : senha,
                 ordem : ordem,
                 data: data,
-                chefe: chefe               
+                chefe: chefe,
+                status: status              
             }
         
         this.model.createAsync(body)
