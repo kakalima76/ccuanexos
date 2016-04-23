@@ -37,11 +37,11 @@ app.controller('testController', ['$scope', '$http', function($scope, $http){
 				})
 			});
 
-		/*var body = {data: '01052016', status: 'folga'}
-		var ps = $http.post('http://localhost:3000/agentes/localiza', body)
+		var body = {data: '01052016', status: 'folga'}
+		var ps = $http.get('http://localhost:3000/agentes')
 		ps.then(function(value){
 			value.data.forEach(function(value){
 				console.log(value.nome);
 			})
-		})*/
+		})
 }]);
