@@ -33,8 +33,9 @@ var middlewareAuth = function(request, response, next){
 
 
 router.get('/', usuarioController.getAll.bind(usuarioController));
+router.post('/localiza', usuarioController.getAgentes.bind(usuarioController));
 router.post('/', usuarioController.create.bind(usuarioController));
-router.put('/inserir/:nome/:ordem/:data', usuarioController.update.bind(usuarioController));
+router.put('/escala', usuarioController.update.bind(usuarioController));
 
 
 module.exports = router;

@@ -17,15 +17,16 @@ var handleFound = function(data){
 function usuarioController(usuarioModel){
     this.model = Promisse.promisifyAll(usuarioModel);
     
-      
-    this.getLast = function(req, res, next){
-       this.model.findLastAsync()
-       .then(function(data){
+    //recupera todos os agentes em um determinado status
+    this.getAgentes = function(req, res, next){
+        var data = req.body.data;
+        var status = req.body.status;
+        this.model.findAgentesAsync(status, data)
+        .then(function(data){
             res.json(data);
-       })
-       .catch(next);
-    };//fim do getlast
-
+        })
+        .catch(next);
+    };//fim do getAgentes
 
     this.getAll = function(req, res, next){
         this.model.findAsync({})
@@ -35,14 +36,6 @@ function usuarioController(usuarioModel){
         .catch(next);
     };//fim do getAll
     
-    this.getById = function(req, res, next){
-        var _id = req.params._id;
-        this.model.findOneAsync(_id)
-        .then(handleFound)
-        .then(function(data){
-            res.json(data);
-        });
-    };//fim do getById
     
     this.create = function(req, res, next){
     
@@ -72,26 +65,19 @@ function usuarioController(usuarioModel){
         .catch(next);
     };//fim do create
     
+    //define um ordem de serviço e um status para um agente por nome e data
     this.update = function(req, res, next){
-        var nome = req.params.nome;
-        var ordem = req.params.ordem;
-        var data = req.params.data;
-        this.model.updateAsync(nome, {$set: {ordem: ordem, data: data}}, {multi: true})
+        var nome = req.body.nome;
+        var ordem = req.body.ordem;
+        var data = req.body.data;
+        var status = req.body.status;
+        this.model.updateAsync(nome, data, {$set: {ordem: ordem, status: status}}, {multi: false})
         .then(function(err, data){
-            res.json(data);
-            console.log('teste');
+            res.json(req.body);
         })
         .catch(next);
     };//fim do update
-    
-    this.remove = function(req, res, next){
-        var _id = req.params._id;
-        this.model.removeAsync(_id)
-        .then(function(err, data){
-            res.json(data);
-        })
-        .catch(next);
-    };//fim do remove
+ 
                
 }
 
