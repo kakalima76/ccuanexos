@@ -1,7 +1,7 @@
 var datas = require('../lib/datas');
 var http = require('http')
 var readline = require('linebyline'),
-rldatas = readline('./lib/arquivo.csv');
+rldatas = readline('./lib/arquivo2.csv');
 rlagentes = readline('./lib/agentes.txt')
 var obj = require('../config/usuario');
 var mongoose = require('../db/mongoose');
@@ -64,15 +64,16 @@ setTimeout(function(){
 		var aux = value.split(',');
 		escalado.nome = aux[0].trim();
 		escalado.matricula = aux[1].trim();
-		escalado.senha = aux[2].trim().substring(0,4);
-		escalado.ordem = aux[3].trim();
-		if(aux[4].trim() === 'true'){
+		escalado.contato = aux[2].trim();
+		escalado.senha = aux[3].trim().substring(0,4);
+		escalado.ordem = aux[4].trim();
+		if(aux[5].trim() === 'true'){
 			escalado.chefe = true
 		}else{
 			escalado.chefe = false
 		}
-		escalado.status = aux[5].trim();
-		escalado.data = aux[6].trim();
+		escalado.status = aux[6].trim();
+		escalado.data = aux[7].trim();
 		usuarioModel.create(escalado, function(err, data){
 			if(err){
 				console.log(err);

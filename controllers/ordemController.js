@@ -18,15 +18,26 @@ function usuarioController(usuarioModel){
     this.model = Promisse.promisifyAll(usuarioModel);
     
     //recupera todos os agentes em um determinado status
-    this.getAgentes = function(req, res, next){
-        var data = req.body.data;
-        var status = req.body.status;
-        this.model.findAgentesAsync(status, data)
+    
+    this.getLast = function(req, res, next){
+        this.model.findOneAsync({})
+        .then(function(data){
+            res.json(data);
+            console.log(data);
+        })
+        .catch(next);
+    }//fim do  getLast
+
+    this.getOrdem = function(req, res, next){
+        var numero = req.body.numero;
+        var query = {numero: numero}
+
+        this.model.findAsync(query)
         .then(function(data){
             res.json(data);
         })
         .catch(next);
-    };//fim do getAgentes
+    };//fim do getOrdem
 
     this.getAll = function(req, res, next){
         this.model.findAsync({})
@@ -38,26 +49,27 @@ function usuarioController(usuarioModel){
     
     
     this.create = function(req, res, next){
+
     
-        var nome = req.body.nome;
-        var matricula = req.body.matricula;
-        var contato = req.body.contato;
-        var senha = req.body.senha;
-        var ordem = req.body.ordem;
-        var data = req.body.data;
+        var numero = req.body.numero;
+        var equipe = req.body.equipe;
+        var apresentacao = req.body.apresentacao;
+        var termino = req.body.termino;
+        var acao = req.body.acao;
         var chefe = req.body.chefe;
-        var status = req.body.status
+        var viatura = req.body.viatura;
         
         var body = 
             {
-                nome : nome,
-                matricula: matricula,
-                senha : senha,
-                ordem : ordem,
-                data: data,
+                numero: numero,
+                equipe: equipe,
+                apresentacao: apresentacao,
+                termino: termino,
+                acao: acao,
                 chefe: chefe,
-                status: status              
+                viatura: viatura
             }
+
         
         this.model.createAsync(body)
         .then(function(err, data){
@@ -67,22 +79,18 @@ function usuarioController(usuarioModel){
     };//fim do create
     
     //define um ordem de serviço e um status para um agente por nome e data
-    this.update = function(req, res, next){
-        var nome = req.body.nome;
-        var ordem = req.body.ordem;
-        var data = req.body.data;
-        var status = req.body.status;
-        var chefe = req.body.chefe;
-        var contato = req.body.contato;
+    /*this.update = function(req, res, next){
+       
         this.model.updateAsync(nome, data, {$set: {ordem: ordem, status: status}}, {multi: false})
         .then(function(err, data){
             res.json(req.body);
         })
         .catch(next);
-    };//fim do update
+    };//fim do update*/
  
                
 }
+
 
 module.exports = function(usuarioModel){
     return new usuarioController(usuarioModel);

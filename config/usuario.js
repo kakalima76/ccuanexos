@@ -2,6 +2,7 @@ var usuario =
     {
         nome : String,
         matricula: String,
+        contato: String,
         senha : String,
         ordem: String,
         data: String,

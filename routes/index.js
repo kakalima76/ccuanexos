@@ -10,5 +10,6 @@ router.use('/agentes', require('./usuarioRouter'));
 router.use('/autorizado', require('./autorizadoRouter'));
 router.use('/imagem', require('./fotoRouter'));
 router.use('/vistoria', require('./vistoriaRouter'));
+router.use('/ordem', require('./ordemRouter'));
 
 module.exports = router;
