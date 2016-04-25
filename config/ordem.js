@@ -1,12 +1,13 @@
 var ordem = 
 	{
 	numero: Number,
-	equipe: String,
+	equipe: Array,
 	apresentacao: String,
 	termino: String,
-	acao: String,
-	chefe: String,
-	viatura: String
+	acao: Array,
+	chefe: Array,
+	viatura: Array,
+	agentes: Array
 	}
 
 module.exports = ordem; 

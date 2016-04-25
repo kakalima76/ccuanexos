@@ -50,7 +50,6 @@ function usuarioController(usuarioModel){
     
     this.create = function(req, res, next){
 
-    
         var numero = req.body.numero;
         var equipe = req.body.equipe;
         var apresentacao = req.body.apresentacao;
@@ -58,20 +57,22 @@ function usuarioController(usuarioModel){
         var acao = req.body.acao;
         var chefe = req.body.chefe;
         var viatura = req.body.viatura;
+        var agentes = req.body.agentes;
         
         var body = 
             {
                 numero: numero,
-                equipe: equipe,
                 apresentacao: apresentacao,
                 termino: termino,
-                acao: acao,
-                chefe: chefe,
-                viatura: viatura
             }
 
-        
-        this.model.createAsync(body)
+        var arrayEquipe = equipe.split(',');
+        var arrayAcao = acao.split(',');
+        var arrayChefe = chefe.split(',');
+        var arrayViatura = viatura.split(',');
+        var arrayAgentes = agentes.split(',');
+
+        this.model.createAsync(body, arrayEquipe, arrayAcao, arrayChefe, arrayViatura, arrayAgentes)
         .then(function(err, data){
             res.json(data);
         })
