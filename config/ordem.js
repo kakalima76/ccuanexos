@@ -1,6 +1,7 @@
 var ordem = 
 	{
 	numero: Number,
+	data: String,
 	equipe: Array,
 	apresentacao: String,
 	termino: String,

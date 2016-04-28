@@ -1,8 +1,8 @@
 var datas = require('../lib/datas');
 var http = require('http')
 var readline = require('linebyline'),
-rldatas = readline('./lib/arquivo2.csv');
-rlagentes = readline('./lib/agentes.txt')
+rldatas = readline('./lib/arquivo.csv');
+rlagentes = readline('./lib/agentes2.txt')
 var obj = require('../config/usuario');
 var mongoose = require('../db/mongoose');
 var usuarioModel = require('../models/model')(mongoose, obj);

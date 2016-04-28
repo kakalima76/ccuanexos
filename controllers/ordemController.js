@@ -51,6 +51,7 @@ function usuarioController(usuarioModel){
     this.create = function(req, res, next){
 
         var numero = req.body.numero;
+        var data = req.body.data;
         var equipe = req.body.equipe;
         var apresentacao = req.body.apresentacao;
         var termino = req.body.termino;
@@ -62,6 +63,7 @@ function usuarioController(usuarioModel){
         var body = 
             {
                 numero: numero,
+                data: data,
                 apresentacao: apresentacao,
                 termino: termino,
             }
