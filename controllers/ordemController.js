@@ -59,9 +59,11 @@ function usuarioController(usuarioModel){
         var chefe = req.body.chefe;
         var viatura = req.body.viatura;
         var agentes = req.body.agentes;
+        var status = req.body.status;
         
         var body = 
             {
+                status: status,
                 numero: numero,
                 data: data,
                 apresentacao: apresentacao,
