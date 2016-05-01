@@ -92,6 +92,30 @@ function usuarioController(usuarioModel){
         })
         .catch(next);
     };//fim do update
+
+    this.atualChefe = function(req, res, next){
+        var numero = req.body.numero;
+        var chefe = req.body.chefe;
+        var arrayChefe = chefe.split(',');
+       
+         this.model.updateAsync(numero, {$set: {chefe: arrayChefe}}, {multi: true})
+        .then(function(err, data){
+            res.json(data);
+        })
+        .catch(next);
+    };//fim do update
+
+    this.atualAgente = function(req, res, next){
+        var numero = req.body.numero;
+        var agentes = req.body.agentes;
+        var arrayAgentes = agentes.split(',');
+       
+         this.model.updateAsync(numero, {$set: {agentes: arrayAgentes}}, {multi: true})
+        .then(function(err, data){
+            res.json(data);
+        })
+        .catch(next);
+    };//fim do update
  
                
 }
