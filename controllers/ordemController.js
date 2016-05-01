@@ -47,7 +47,6 @@ function usuarioController(usuarioModel){
         .catch(next);
     };//fim do getAll
     
-    
     this.create = function(req, res, next){
 
         var numero = req.body.numero;
@@ -83,15 +82,16 @@ function usuarioController(usuarioModel){
         .catch(next);
     };//fim do create
     
-    //define um ordem de serviço e um status para um agente por nome e data
-    /*this.update = function(req, res, next){
+    this.update = function(req, res, next){
+        var numero = req.body.numero;
+        var status = req.body.status;
        
-        this.model.updateAsync(nome, data, {$set: {ordem: ordem, status: status}}, {multi: false})
+        this.model.updateAsync(numero, {$set: {status: status, chefe: [''], agentes: ['']}}, {multi: true})
         .then(function(err, data){
-            res.json(req.body);
+            res.json(data);
         })
         .catch(next);
-    };//fim do update*/
+    };//fim do update
  
                
 }

@@ -36,7 +36,7 @@ router.get('/', usuarioController.getAll.bind(usuarioController));
 router.get('/ultimo', usuarioController.getLast.bind(usuarioController));
 router.post('/numero', usuarioController.getOrdem.bind(usuarioController));
 router.post('/', usuarioController.create.bind(usuarioController));
-//router.put('/escala', usuarioController.update.bind(usuarioController));
+router.put('/escala', usuarioController.update.bind(usuarioController));
 
 
 module.exports = router;

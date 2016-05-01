@@ -11,6 +11,7 @@ function modelDAO(model){
     this.findOne = function(query, cb){
         this.model.find(query).sort({'_id' : -1}).limit(1).exec(cb);
     }
+
         
     this.create = function(data, equipe, acao, chefe, viatura, agente, cb){
         var model = new this.model(data);
@@ -40,12 +41,13 @@ function modelDAO(model){
         });
     }//fim do método create
     
-    /*this.update = function(nome, date, data, options, cb){
-        var query = {nome : nome, data: date};
+
+     this.update = function(numero, data, options, cb){
+        var query = {numero: numero};
         this.model.update(query, data, options).exec(function(err, result){
            cb(err, result); 
         });
-    };//fim do metodo update*/
+    };//fim do metodo update
     
       
 }
