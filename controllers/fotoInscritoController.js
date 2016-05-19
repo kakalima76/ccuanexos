@@ -19,7 +19,7 @@ function usuarioController(usuarioModel){
 
     this.getOne = function(req, res, next){
 
-        var cpf = req.body.cpf;
+        var cpf = req.params.cpf;
 
         this.model.findOneAsync(cpf)
         .then(function(data){

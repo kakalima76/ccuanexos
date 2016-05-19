@@ -32,7 +32,7 @@ var middlewareAuth = function(request, response, next){
 };
 
 
-router.post('/', usuarioController.getOne.bind(usuarioController));
+router.get('/:cpf', usuarioController.getOne.bind(usuarioController));
 router.post('/', usuarioController.create.bind(usuarioController));
 
 module.exports = router;
