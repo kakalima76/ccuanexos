@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div ng-controller="buscarController">
+	<center>
+		<div class="dados">
+		<span>CPF:</span>
+		<input type="text" class="centralizar" placeholder="cadastro de pessoa física" ng-model="cadastro" ng-dblclick="limpar()" ui-cpf>
+		<button ng-click="buscar()">Buscar</button>
+		</div>
+	</center>
+
+</div>
+
+{% endblock %}

@@ -23,7 +23,18 @@ function usuarioController(usuarioModel){
 
         this.model.findOneAsync(cpf)
         .then(function(data){
-            res.json(data);
+            var response = [];
+                data.forEach(function(foto){
+                    response.push(
+                       {
+                        foto: foto.foto.toString()
+                       } 
+                    )
+                })
+
+
+
+            res.json(response || '');
         })
         .catch(next);
     }//fim do  findOne

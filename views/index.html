@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div ng-controller="printController">
+		
+		<center ng-show="!mostrarFicha">
+			<div class="dados">
+			<span>CPF:</span>
+			<input type="text" class="centralizar" placeholder="cadastro de pessoa física" ng-model="cadastro" ng-dblclick="limpar()" ui-cpf>
+			<button ng-click="buscar()">Buscar</button>
+			</div>
+		</center>
+
+
+	<div ng-show="mostrarFicha"><!-- aparecerá após a busca do controller acima -->
+		
+		<center><img src="images/logo.png" class="logo" ng-click="retornar()"></center>
+		<center><h5>PREFEITURA DA CIDADE DO RIO DE JANEIRO</h5></center>
+		<center><h5>SECRETARIA MUNICIPAL DE ORDEM PÚBLICA</h5></center>
+		<center><h5>COORDENAÇÃO DE CONTROLE URBANO</h5></center>
+		<center><h1 class="titulo">FICHA DE CADASTRO DE AMBULANTE</h1></center>
+		<center><h1 class="titulo">DO ASSENTAMENTO DA PRAÇA NELSON MANDELA</h1></center>
+		<br/>
+		<div id="foto">
+			<img class="imagem" id="fotoT">
+		</div>
+
+		<div id="dados">
+		<center><h1 class="subtitulo">DADOS PRINCIPAIS</h1></center>
+			<div class="dados">
+				<span ng-bind="'Inscrição: ' + inscrito.inscricao">:</span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'Processo: ' + inscrito.processo">:</span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'CPF: ' + inscrito.cpf">:</span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'Nome: ' + inscrito.nome">:</span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'Identidade: ' + inscrito.identidade">:</span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'Órgão expeditor: ' + inscrito.expeditor">:</span>
+			</div>
+
+		</div>
+
+		<div id="endereco">
+		<center><h1 class="subtitulo">INFORMAÇÕES DE ENVIO E CONTATO</h1></center>
+			<div class="dados">
+				<span ng-bind="'Endereço: ' + inscrito.endereco + ', ' + inscrito.numero + ' ' + inscrito.complemento  + ' - ' + inscrito.bairro + ' - ' + inscrito.cidade + ' - CEP: ' + inscrito.cep"></span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'Contato(s): ' + inscrito.telResidencial + ' ' + inscrito.telCelular + ' ' + inscrito.radio + ' Email: ' + inscrito.email"></span>
+			</div>
+
+		</div>
+
+		<div id="produto">
+		<center><h1 class="subtitulo">PRODUTOS SOLICITADOS</h1></center>
+			<div class="dados">
+				<ul>
+	  				<li ng-repeat="p in produtos" ng-bind="'&#10157' + ' ' + p.produto"></li>
+				</ul> 
+			</div>
+				 
+		</div>
+
+		<div id="auxiliar">
+		<center><h1 class="subtitulo">DADOS DO AUXILIAR</h1></center>
+				<div id="fotoAuxliar">
+					<img id="fotoA">
+				</div>
+
+				<div id="dadosAuxliar">
+					<div class="dados">
+					<span ng-bind="'CPF: ' + inscrito.cpfPreposto">:</span>
+					</div>
+
+					<div class="dados">
+						<span ng-bind="'Nome completo: ' + inscrito.nomePreposto">:</span>
+					</div>
+
+					<div class="dados">
+						<span ng-bind="'Identidade: ' + inscrito.identidadePreposto">:</span>
+					</div>
+
+					<div class="dados">
+						<span ng-bind="'Órgão expeditor: ' + inscrito.expeditorPreposto">:</span>
+					</div>
+				</div>
+		</div>
+
+		<div id="footer">
+			<div class="data">
+				<p ng-bind="data"></p>
+			</div>
+
+			<hr class="linha">
+			<center>
+				<div class="dados">
+					<span ng-bind="inscrito.nome">:</span>
+				</div>
+			</center>
+		</div>
+	</div>
+</div>
+		
+
+{% endblock %}

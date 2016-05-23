@@ -51,156 +51,124 @@ table {
 
 body {
   padding: 0;
-  font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
-    color: darkblue;
-    background-color: rgb(0,112,230);
-}
-
-			header {
-				width: 100%;
-				height: 20%;
-				position: absolute;
-				top: 0;
-				background-color: rgb(0,0,0);
-				padding: 0;
-				color: rgb(255,255,255);
-				text-align: center;;
-				font-style: Arial, sans-serif;
-				font-size: 2.5ex;
-			}
-
-			section {
-				width: 30%;
-				height: 50.0%;
-				position: absolute;
-				top: 35%;
-				left: 35%;
-				background: rgb(0,150,230);
-			}
-
-			input{
-				color: red;
-				font-size: 1.2em;
-			}
-
-			.input-name {
-				width: 83.33%;
-				height: 18.75%;
-				padding: 0;
-				margin: 0;
-				border: 0;
-				position: absolute;
-				top: 15%;
-				left: 8.335%;
-			}
-
-			.input-password {
-				width: 83.33%;
-				height: 18.75%;
-				padding: 0;
-				margin: 0;
-				border: 0;
-				position: absolute;
-				top: 40%;
-				left: 8.33%;
-			}
-
-			.input-submit {
-				width: 83.33%;
-				height: 18.75%;
-				padding: 0;
-				margin: 0;
-				border: 0;
-				position: absolute;
-				top: 65%;
-				left: 8.33%;
-				background-color: rgb(0,180,244);
-			}
-
-			input[type=submit]:hover{
-				background-color: rgb(20,204,252);
-				color: rgb(0,0,206);
-			}
-
-			a {
-			  color: #00B7FF;
-			}
-
-@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-
-			header {
-				width: 100%;
-				height: 10%;
-				position: absolute;
-				top: 0;
-				background-color: rgb(0,78,0);
-				padding: 0;
-				color: rgb(255,255,255);
-				text-align: center;;
-				font-style: Arial, sans-serif;
-				font-size: 2.5ex;
-			}
-
-			section {
-				width: 75%;
-				height: 50.0%;
-				position: absolute;
-				top: 25%;
-				left: 12.5%;
-				background: rgb(0,150,230);
-			}
-
-			input{
-				color: red;
-				font-size: 1.2em;
-			}
-
-			.input-name {
-				width: 83.33%;
-				height: 18.75%;
-				padding: 0;
-				margin: 0;
-				border: 0;
-				position: absolute;
-				top: 15%;
-				left: 8.335%;
-			}
-
-			.input-password {
-				width: 83.33%;
-				height: 18.75%;
-				padding: 0;
-				margin: 0;
-				border: 0;
-				position: absolute;
-				top: 40%;
-				left: 8.33%;
-			}
-
-			.input-submit {
-				width: 83.33%;
-				height: 18.75%;
-				padding: 0;
-				margin: 0;
-				border: 0;
-				position: absolute;
-				top: 65%;
-				left: 8.33%;
-				background-color: rgb(0,180,244);
-			}
-
-			input[type=submit]:hover{
-				background-color: rgb(20,204,252);
-				color: rgb(0,0,206);
-			}
-
-			a {
-			  color: #00B7FF;
-			}
-
-			/*testando o nodemon"*/
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 
+.titulo{
+	font-size: 14pt;
+}
 
+#foto{
+	position: absolute;
+	left: 0;
+	width: 30%;
+	height: 200px;
+	border-bottom: solid;
+	border-width: 1px;
+}
+
+#dados{
+	position: relative;
+	float: right;
+	width: 70%;
+	height: 200px;
+	border-bottom: solid;
+	border-width: 1px;
+}
+
+#endereco{
+	position: relative;
+	font-size: 7pt;
+	float: right;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	border-bottom: solid;
+	border-width: 1px;
+}
+
+#produto{
+	position: relative;
+	float: right;
+	left: 0;
+	width: 100%;
+	padding-bottom: 10px;
+	border-bottom: solid;
+	border-width: 1px;
+}
+
+#auxiliar{
+	position: relative;
+	float: right;
+	left: 0;
+	width: 100%;
 	
+}
+
+.dados{
+	width: 100%
+	height: 15px;
+	font-size: 1.2em;
+	padding-top: 2px;
+	padding-left: 20px;
+	margin-top: 2px;
+}
+
+#fotoAuxliar{
+	position: absolute;
+	width: 25%;
+	height: 150px;
+	border-bottom: solid;
+	border-width: 1px;
+}
+
+#dadosAuxliar{
+	position: relative;
+	float: right;
+	width: 75%;
+	height: 150px;
+	border-bottom: solid;
+	border-width: 1px;
+}
+
+.subtitulo{
+	font-weight: bold;
+	font-size: 1.4em;
+	padding-top: 2px;
+	text-decoration: underline;
+}
+
+#fotoT{
+	width: 100%;
+	height: 200px; 
+}
+
+#fotoA{
+	width: 100%;
+	height: 150px;
+}
+
+#footer
+{
+	position: relative;
+	float: right;
+	font-size: 1.4em;
+	padding-top: 2px;
+	width:100%;
+	height: 10px;
+}
+
+.linha{
+	width: 45%;
+	margin-top: 45px;
+}
+
+.data{
+	padding-top: 3px;
+	font-size: 11pt;
+}
+
+.centralizar{
+	text-align: center;
+}
