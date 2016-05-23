@@ -2,6 +2,8 @@ var inscrito =
 	{
 	inscricao: Number,
 	processo: Number,
+	im: String,
+	local: String,
 	cpf: String,
 	nome: String,
 	identidade: String,

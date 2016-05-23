@@ -21,16 +21,18 @@ app.controller('printController', ['$scope', '$http', 'factoryInscritos', functi
 	function titular(foto){
 		$http.get('http://ccuanexos.herokuapp.com/foto/' + foto)
 		.then(function(data){
-			data.data.forEach(function(value){
-				console.log(value.foto.toString());
-			})
+			var imagem = data.data[0].foto.toString();
+			var imageT = document.getElementById('fotoT');
+    		imageT.src = "data:image/jpeg;base64," + (imagem || '');
+		})
+	}
 
-
-
-
-
-			/*var imageT = document.getElementById('fotoT');
-    		imageT.src = "data:image/jpeg;base64," + '';*/
+	function auxiliar(foto){
+		$http.get('http://ccuanexos.herokuapp.com/foto/' + foto)
+		.then(function(data){
+			var imagem = data.data[0].foto.toString();
+			var imageA = document.getElementById('fotoA');
+    		imageA.src = "data:image/jpeg;base64," + (imagem || '');
 		})
 	}
 
@@ -53,6 +55,7 @@ app.controller('printController', ['$scope', '$http', 'factoryInscritos', functi
 								$scope.produtos.push(obj);
 							});
 						titular($scope.inscrito.cpf);
+						auxiliar($scope.inscrito.cpfPreposto)
 						$scope.mostrarFicha = true;
 					}else{
 						alert('CPF não localizado');
@@ -76,10 +79,9 @@ app.controller('printController', ['$scope', '$http', 'factoryInscritos', functi
 		var meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
 		var semana = ['segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado', 'domingo']
 		var dia = data.getDate();
-		var semana = semana[data.getDay()];
+		var semana = semana[data.getDay() - 1];
 		var mes = meses[data.getMonth()];
 		var ano = data.getFullYear();
-
 		var res = 'Rio de Janeiro, ' + semana + ', ' + dia + ' de ' + mes + ' de ' + ano + '.'; 
 
 		return res;
@@ -89,8 +91,7 @@ app.controller('printController', ['$scope', '$http', 'factoryInscritos', functi
 
 
 	
-    var imageA = document.getElementById('fotoA');
-    imageA.src = "data:image/jpeg;base64," + imageData;
+    
 
 	
 	

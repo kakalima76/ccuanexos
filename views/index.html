@@ -18,6 +18,7 @@
 		<center><h5>PREFEITURA DA CIDADE DO RIO DE JANEIRO</h5></center>
 		<center><h5>SECRETARIA MUNICIPAL DE ORDEM PÚBLICA</h5></center>
 		<center><h5>COORDENAÇÃO DE CONTROLE URBANO</h5></center>
+		<br/>
 		<center><h1 class="titulo">FICHA DE CADASTRO DE AMBULANTE</h1></center>
 		<center><h1 class="titulo">DO ASSENTAMENTO DA PRAÇA NELSON MANDELA</h1></center>
 		<br/>
@@ -28,11 +29,19 @@
 		<div id="dados">
 		<center><h1 class="subtitulo">DADOS PRINCIPAIS</h1></center>
 			<div class="dados">
-				<span ng-bind="'Inscrição: ' + inscrito.inscricao">:</span>
+				<span ng-bind="'Livro: ' + inscrito.inscricao">:</span>
 			</div>
 
 			<div class="dados">
-				<span ng-bind="'Processo: ' + inscrito.processo">:</span>
+				<span ng-bind="'I.M: ' + inscrito.im">:</span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'Processo: ' + '04/' + inscrito.processo + '/2016'">:</span>
+			</div>
+
+			<div class="dados">
+				<span ng-bind="'Local: ' + inscrito.local">:</span>
 			</div>
 
 			<div class="dados">
@@ -43,12 +52,8 @@
 				<span ng-bind="'Nome: ' + inscrito.nome">:</span>
 			</div>
 
-			<div class="dados">
-				<span ng-bind="'Identidade: ' + inscrito.identidade">:</span>
-			</div>
-
-			<div class="dados">
-				<span ng-bind="'Órgão expeditor: ' + inscrito.expeditor">:</span>
+			<div  class="dados">
+				<span ng-bind="'Identidade: ' + inscrito.identidade + ' ' + inscrito.expeditor"></span>
 			</div>
 
 		</div>
