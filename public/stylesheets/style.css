@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	margin-left: 5%;
 }
 ol, ul {
 	list-style: none;
@@ -174,6 +175,3 @@ body {
 	text-align: center;
 }
 
-body{
-	margin-left: 5%;
-}
