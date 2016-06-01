@@ -13,29 +13,9 @@ function modelDAO(model){
     }
 
         
-    this.create = function(data, equipe, acao, chefe, viatura, agente, cb){
+    this.create = function(data, cb){
         var model = new this.model(data);
-        equipe.forEach(function(value){
-            model.equipe.push(value.trim());
-        })
-
-        acao.forEach(function(value){
-            model.acao.push(value.trim());
-        })
-
-        chefe.forEach(function(value){
-            model.chefe.push(value.trim());
-        })
-
-        viatura.forEach(function(value){
-            model.viatura.push(value.trim());
-        })
-
-        agente.forEach(function(value){
-            model.agentes.push(value.trim());
-        })
-
-        
+               
         model.save(function(err, result){
            cb(err, result); 
         });

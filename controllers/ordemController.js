@@ -49,33 +49,38 @@ function usuarioController(usuarioModel){
     
     this.create = function(req, res, next){
 
+        var status = req.body.status;
         var numero = req.body.numero;
         var data = req.body.data;
         var equipe = req.body.equipe;
         var apresentacao = req.body.apresentacao;
         var termino = req.body.termino;
-        var acao = req.body.acao;
+        var acao01 = req.body.acao01;
+        var acao02 = req.body.acao02;
+        var acao03 = req.body.acao03;
         var chefe = req.body.chefe;
         var viatura = req.body.viatura;
         var agentes = req.body.agentes;
-        var status = req.body.status;
+        
         
         var body = 
             {
                 status: status,
                 numero: numero,
                 data: data,
+                equipe: equipe,
                 apresentacao: apresentacao,
                 termino: termino,
+                acao01: acao01,
+                acao02: acao02,
+                acao03: acao03,
+                chefe: chefe,
+                viatura: viatura,
+                agentes: agentes
             }
 
-        var arrayEquipe = equipe.split(',');
-        var arrayAcao = acao.split(',');
-        var arrayChefe = chefe.split(',');
-        var arrayViatura = viatura.split(',');
-        var arrayAgentes = agentes.split(',');
-
-        this.model.createAsync(body, arrayEquipe, arrayAcao, arrayChefe, arrayViatura, arrayAgentes)
+        
+        this.model.createAsync(body)
         .then(function(err, data){
             res.json(data);
         })

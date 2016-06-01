@@ -3,13 +3,15 @@ var ordem =
 	status: String,
 	numero: Number,
 	data: String,
-	equipe: Array,
+	equipe: String,
 	apresentacao: String,
 	termino: String,
-	acao: Array,
-	chefe: Array,
-	viatura: Array,
-	agentes: Array
+	acao01: String,
+	acao02:String,
+	acao03:String,
+	chefe: String,
+	viatura: String,
+	agentes: String,
 	}
 
 module.exports = ordem; 
