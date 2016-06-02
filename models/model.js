@@ -7,12 +7,8 @@ function modelDAO(model){
     this.find = function(query, cb){
     this.model.find(query).exec(cb);
     };//fim do metodo find
-      
-    this.findAgentes = function(status, data, cb){
-        var query = {status: status, data: data}
-        this.model.find(query).exec(cb);
-    };
     
+
         
     this.create = function(data, cb){
         var model = new this.model(data);
@@ -21,9 +17,9 @@ function modelDAO(model){
         });
     }//fim do método create
     
-    this.update = function(nome, date, data, options, cb){
-        var query = {nome : nome, data: date};
-        this.model.update(query, data, options).exec(function(err, result){
+    this.update = function(nome, dados, options, cb){
+        var query = {nome : nome};
+        this.model.update(query, dados, options).exec(function(err, result){
            cb(err, result); 
         });
     };//fim do metodo update
