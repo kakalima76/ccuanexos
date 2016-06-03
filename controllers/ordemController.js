@@ -29,7 +29,7 @@ function usuarioController(usuarioModel){
     }//fim do  getLast
 
     this.getOrdem = function(req, res, next){
-        var numero = req.body.numero;
+        var numero = req.params.numero;
         var query = {numero: numero}
 
         this.model.findAsync(query)
