@@ -89,21 +89,31 @@ function usuarioController(usuarioModel){
     
     this.update = function(req, res, next){
         var numero = req.body.numero;
-        var status = req.body.status;
+        
+        var equipe = req.body.equipe,
+            apresentacao = req.body.apresentacao,
+            termino = req.body.termino,
+            acao01 = req.body.acao01,
+            acao02 = req.body.acao02,
+            acao03 = req.body.acao03,
+            chefe = req.body.chefe,
+            viatura = req.body.viatura,
+            agentes = req.body.agentes;
+
        
-        this.model.updateAsync(numero, {$set: {status: status, chefe: [''], agentes: ['']}}, {multi: true})
+        this.model.updateAsync(numero, {$set: {equipe: equipe, apresentacao: apresentacao, termino: termino, acao01: acao01, acao02: acao02, acao03: acao03, viatura: viatura}}, {multi: true})
         .then(function(err, data){
             res.json(data);
         })
         .catch(next);
     };//fim do update
 
+
     this.atualChefe = function(req, res, next){
         var numero = req.body.numero;
         var chefe = req.body.chefe;
-        var arrayChefe = chefe.split(',');
        
-         this.model.updateAsync(numero, {$set: {chefe: arrayChefe}}, {multi: true})
+         this.model.updateAsync(numero, {$set: {chefe: chefe}}, {multi: true})
         .then(function(err, data){
             res.json(data);
         })
@@ -113,16 +123,13 @@ function usuarioController(usuarioModel){
     this.atualAgente = function(req, res, next){
         var numero = req.body.numero;
         var agentes = req.body.agentes;
-        var arrayAgentes = agentes.split(',');
        
-         this.model.updateAsync(numero, {$set: {agentes: arrayAgentes}}, {multi: true})
+         this.model.updateAsync(numero, {$set: {agentes: agentes}}, {multi: true})
         .then(function(err, data){
             res.json(data);
         })
         .catch(next);
     };//fim do update
- 
-               
 }
 
 

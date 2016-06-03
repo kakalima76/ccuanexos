@@ -1,6 +1,5 @@
 var ordem = 
 	{
-	status: String,
 	numero: Number,
 	data: String,
 	equipe: String,
