@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.json({});
 });
 
 router.use('/agentes', require('./usuarioRouter'));
@@ -15,5 +15,6 @@ router.use('/cadastro', require('./inscritosRouter'));
 router.use('/numero', require('./numeroRouter'));
 router.use('/foto', require('./fotoInscritoRouter'));
 router.use('/cep', require('./cepRouter'));
+router.use('/lacre', require('./lacreRouter'));
 
 module.exports = router;
