@@ -54,15 +54,7 @@ function usuarioController(usuarioModel){
     
     this.create = function(req, res, next){
 
-        var numero = req.body.numero;
-        var mercadoria = req.body.mercadoria;
-        var data = req.body.data;
-
-        var body = {
-            numero: numero,
-            mercadoria: mercadoria,
-            data: data
-        }
+        var body = req.body;
             
         this.model.createAsync(body)
         .then(function(err, data){
