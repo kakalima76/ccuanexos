@@ -7,8 +7,11 @@ function modelDAO(model){
     this.find = function(query, cb){
     this.model.find(query).exec(cb);
     };//fim do metodo find
-    
 
+    this.findOne = function(matricula, cb){
+    var query = {matricula: matricula}
+    this.model.findOne(query).exec(cb);
+    };//fim do metodo find
         
     this.create = function(data, cb){
         var model = new this.model(data);

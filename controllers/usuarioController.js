@@ -26,6 +26,16 @@ function usuarioController(usuarioModel){
         })
         .catch(next);
     };//fim do getAll
+
+    this.getOne = function(req, res, next){
+        var matricula = req.params.matricula;
+
+        this.model.findOneAsync(matricula)
+        .then(function(data){
+            res.json(data);
+        })
+        .catch(next);
+    };//fim do getOne
     
     
     this.create = function(req, res, next){
