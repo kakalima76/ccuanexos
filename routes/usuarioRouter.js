@@ -36,6 +36,7 @@ router.get('/', usuarioController.getAll.bind(usuarioController));
 router.get('/escala/:matricula', usuarioController.getOne.bind(usuarioController));
 router.post('/', usuarioController.create.bind(usuarioController));
 router.put('/escala', usuarioController.update.bind(usuarioController));
+router.put('/contato', usuarioController.updateContato.bind(usuarioController));
 
 
 module.exports = router;

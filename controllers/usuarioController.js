@@ -317,6 +317,18 @@ function usuarioController(usuarioModel){
         .catch(next);
     };//fim do update
  
+    this.updateContato = function(req, res, next){
+        var matricula = req.body.matricula;
+        var contato = req.body.contato;
+        var update = {contato: contato}
+
+  
+        this.model.updateContatoAsync(matricula, {$set: update}, {multi: false})
+        .then(function(err, data){
+            res.json(data);
+        })
+        .catch(next);
+    };//fim do update
                
 }
 

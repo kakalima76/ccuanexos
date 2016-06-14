@@ -26,6 +26,13 @@ function modelDAO(model){
            cb(err, result); 
         });
     };//fim do metodo update
+
+    this.updateContato = function(matricula, dados, options, cb){
+        var query = {matricula : matricula};
+        this.model.update(query, dados, options).exec(function(err, result){
+           cb(err, result); 
+        });
+    };//fim do metodo update
     
       
 }
