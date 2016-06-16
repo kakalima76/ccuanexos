@@ -7,7 +7,10 @@ var lacre = {
 	agente: String,
 	hora: String,
 	bairro: String,
-	logradouro: String
+	logradouro: String,
+	dataCadastro: Date,
+	agenteCadastro: String,
+	localCadastro: String
 }
 
 module.exports = lacre;
