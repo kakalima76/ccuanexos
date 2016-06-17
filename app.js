@@ -18,7 +18,7 @@ app.set('view engine', 'html');
 app.engine('html', swig.renderFile);
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(methodOverride('X-HTTP-Method'));
 app.use(methodOverride('X-HTTP-Method-Override'));
@@ -28,14 +28,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(function(req, res, next){
+/*app.use(function(req, res, next){
     if (req.url === '/favicon.ico'){
         res.writeHead(200, {'Content-Type': 'image/x-icon'});
         res.send('');
     }else{
         next();
     }
-});
+});*/
 app.use(function(req, res, next){
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, timeout");
