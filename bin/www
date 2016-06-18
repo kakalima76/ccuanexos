@@ -14,9 +14,14 @@ var onWorkerError = function(code, signal){
   debug(code, signal);
 }
 
-if(cluster.isMaster){
+cluster.on('exit', function(err){
+    var newWorker = cluster.fork();
+    newWorker.on('error', onWorkerError);
+    debug('A new worker rises', newWorker.process.pid);
+
+/*if(cluster.isMaster){
   for( var i = 0; i < numCPUs; i++){
-    /*var worker = cluster.fork();*/
+    var worker = cluster.fork();
     worker.on('error', onWorkerError);
   }
 
@@ -24,9 +29,9 @@ if(cluster.isMaster){
     var newWorker = cluster.fork();
     newWorker.on('error', onWorkerError);
     debug('A new worker rises', newWorker.process.pid);
-  });
+  });*/
 
-}else{
+
 
 
         /**
@@ -116,4 +121,3 @@ if(cluster.isMaster){
         }
 
 
-}
