@@ -11,7 +11,7 @@ var autorizado =
       local: String,
       situacao: String,
       conformidade: String,
-      multas: String,
+      multas: Array,
       latitude: Number,
       longitude: Number,
       horaAutuacao: String,
