@@ -6,7 +6,6 @@ var autorizado =
       data: String,
       im: String,
       titular: String,
-      preposto: String,
       cpf: String,
       conformidade: String,
       multas: Array,
@@ -14,7 +13,6 @@ var autorizado =
       longitude: Number,
       horaAutuacao: String,
       pontos: Number
-
     }
 
     module.exports = autorizado;
