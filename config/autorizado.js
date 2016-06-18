@@ -8,8 +8,6 @@ var autorizado =
       titular: String,
       preposto: String,
       cpf: String,
-      local: String,
-      situacao: String,
       conformidade: String,
       multas: Array,
       latitude: Number,
