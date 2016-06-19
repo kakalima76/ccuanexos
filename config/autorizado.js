@@ -1,7 +1,8 @@
 var autorizado = 
     {
       nome: String, 
-      matricula: String, 
+      matricula: String,
+      local: String, 
       ordem: Number, 
       data: String,
       im: String,
