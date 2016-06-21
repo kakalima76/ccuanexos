@@ -1,6 +1,6 @@
 var ordem = 
 	{
-	numero: Number,
+	numero: { type: Number, unique: true },
 	data: String,
 	equipe: String,
 	apresentacao: String,
