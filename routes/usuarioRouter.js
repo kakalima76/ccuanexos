@@ -38,5 +38,4 @@ router.post('/', usuarioController.create.bind(usuarioController));
 router.put('/escala', usuarioController.update.bind(usuarioController));
 router.put('/contato', usuarioController.updateContato.bind(usuarioController));
 
-
 module.exports = router;
