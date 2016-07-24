@@ -49,35 +49,7 @@ function usuarioController(usuarioModel){
     
     this.create = function(req, res, next){
 
-        var status = req.body.status;
-        var numero = req.body.numero;
-        var data = req.body.data;
-        var equipe = req.body.equipe;
-        var apresentacao = req.body.apresentacao;
-        var termino = req.body.termino;
-        var acao01 = req.body.acao01;
-        var acao02 = req.body.acao02;
-        var acao03 = req.body.acao03;
-        var chefe = req.body.chefe;
-        var viatura = req.body.viatura;
-        var agentes = req.body.agentes;
-        
-        
-        var body = 
-            {
-                status: status,
-                numero: numero,
-                data: data,
-                equipe: equipe,
-                apresentacao: apresentacao,
-                termino: termino,
-                acao01: acao01,
-                acao02: acao02,
-                acao03: acao03,
-                chefe: chefe,
-                viatura: viatura,
-                agentes: agentes
-            }
+        var body = req.body;
 
         
         this.model.createAsync(body)
@@ -96,12 +68,16 @@ function usuarioController(usuarioModel){
             acao01 = req.body.acao01,
             acao02 = req.body.acao02,
             acao03 = req.body.acao03,
+            acao04 = req.body.acao04,
+            acao05 = req.body.acao05,
+            acao06 = req.body.acao06,
+            acao07 = req.body.acao07,
             chefe = req.body.chefe,
             viatura = req.body.viatura,
             agentes = req.body.agentes;
 
        
-        this.model.updateAsync(numero, {$set: {equipe: equipe, apresentacao: apresentacao, termino: termino, acao01: acao01, acao02: acao02, acao03: acao03, viatura: viatura}}, {multi: true})
+        this.model.updateAsync(numero, {$set: {equipe: equipe, apresentacao: apresentacao, termino: termino, acao01: acao01, acao02: acao02, acao03: acao03, acao04: acao04, acao05: acao05, acao06: acao06, acao07: acao07, viatura: viatura}}, {multi: true})
         .then(function(err, data){
             res.json(data);
         })
